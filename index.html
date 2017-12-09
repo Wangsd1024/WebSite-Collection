@@ -21,7 +21,7 @@
 <!-- 所有class="smoothJump"的标签都可以实现平滑跳转，代码在custom.js中 -->
 <!-- 返回顶部按钮,屏幕向下滚动一个屏幕，按钮才可见 -->
 <div class="go_to_top">
-	<a id="toTop" href="#top" class="smoothJump"><img clas="img_top" src="assets/img/top.png"></a>
+	<a id="toTop" href="#top" class="smoothJump"><img clas="img_top" src="assets/top.png"></a>
 </div>
     <!-- LOGO HEADER END-->
     <section class="menu-section">
@@ -60,7 +60,7 @@
 									<td   align=left>  
 										<input  size="47" name=q title="科学上网"  onMouseOver="this.focus()">  
 										<script>     
-											document.f.q.focus(); //默认激活Google搜索    
+											//document.f.q.focus(); //加载完成后激活Google搜索    
 										</script>     
 										<input   type=hidden   name=ie   value="UTF-8">  
 										<input   type=hidden   name=oe   value="UTF-8"> 
@@ -83,7 +83,10 @@
 				<div class="col-md-6">		
 						<!--baidu search need extra javascript code， which is in custom.js-->		
 						<form name="search_form1" onsubmit="return go(this)">
-							<input name=word size="47" maxLength=256 title="百度搜索" onMouseOver="this.focus()" onFocus="this.select()"  baiduSug="2">
+							<input id="bd-search" name=word size="47" maxLength=256 title="百度搜索" onMouseOver="this.focus()" onFocus="this.select()">
+							<script>
+								document.search_form1.word.focus(); //加载完成后激活百度搜索
+							</script>
 							<input type="submit" value="百度搜索"><br>
 							<INPUT name=myselectvalue type=hidden value=0>
 							<INPUT name=tn type=hidden value="baidu">
